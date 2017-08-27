@@ -46,4 +46,16 @@ class Train extends BoardingPass {
 
 		return $this;
 	}
+
+	public function getDirections()
+	{
+		return sprintf("Take train %s from %s to %s. Sit in seat %s.",
+			$this->getDepartureNumber(),
+			$this->getSource(),
+			$this->getDestination(),
+			$this->getSeat()
+		);
+	}
+
+
 }

@@ -32,7 +32,7 @@ abstract class BoardingPass {
 	/**
 	 * @param string $source
 	 *
-	 * @return BoardingPass
+	 * @return $this
 	 */
 	public function setSource($source)
 	{
@@ -52,7 +52,7 @@ abstract class BoardingPass {
 	/**
 	 * @param string $destination
 	 *
-	 * @return BoardingPass
+	 * @return $this
 	 */
 	public function setDestination($destination)
 	{
@@ -72,7 +72,7 @@ abstract class BoardingPass {
 	/**
 	 * @param string $departureNumber
 	 *
-	 * @return BoardingPass
+	 * @return $this
 	 */
 	public function setDepartureNumber($departureNumber)
 	{
@@ -92,4 +92,9 @@ abstract class BoardingPass {
 
 		return $this;
 	}
+
+	/**
+	 * @return string
+	 */
+	public abstract function getDirections();
 }

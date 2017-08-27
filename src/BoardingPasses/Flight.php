@@ -93,10 +93,25 @@ class Flight extends BoardingPass {
 		parent::fromArray($data);
 
 		$this->baggageInformation = $data['baggage'];
-		$this->seat = $data['seat'];
-		$this->gate = $data['gate'];
-		$this->departureNumber = $data['flight'];
+		$this->seat               = $data['seat'];
+		$this->gate               = $data['gate'];
+		$this->departureNumber    = $data['flight'];
 
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDirections()
+	{
+		return sprintf("From %s, take flight %s to %s. Gate %s, seat %s. %s.",
+			$this->getSource(),
+			$this->getDepartureNumber(),
+			$this->getDestination(),
+			$this->getGate(),
+			$this->getSeat(),
+			$this->getBaggageInformation()
+		);
 	}
 }
