@@ -1,0 +1,14 @@
+#!/usr/bin/php
+<?php
+
+use CImrie\FlightSorter\BoardingPassGenerator;
+
+require_once(__DIR__ . "/vendor/autoload.php");
+
+$file = $argv[1];
+
+$generator = new BoardingPassGenerator();
+$journey = $generator->generateFromFile($file);
+
+echo $journey->getDirections();
+exit;
