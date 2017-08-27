@@ -22,6 +22,11 @@ abstract class BoardingPass {
 	protected $departureNumber;
 
 	/**
+	 * @var string
+	 */
+	protected $seat;
+
+	/**
 	 * @return string
 	 */
 	public function getSource()
@@ -82,13 +87,35 @@ abstract class BoardingPass {
 	}
 
 	/**
+	 * @return string
+	 */
+	public function getSeat()
+	{
+		return $this->seat;
+	}
+
+	/**
+	 * @param string $seat
+	 *
+	 * @return $this
+	 */
+	public function setSeat($seat)
+	{
+		$this->seat = $seat;
+
+		return $this;
+	}
+
+	/**
 	 * @param array $data
 	 *
 	 * @return $this
 	 */
-	public function fromArray(array $data) {
-		$this->setSource($data['from']);
-		$this->setDestination($data['to']);
+	public function fromArray(array $data)
+	{
+		$this->source      = $data['from'];
+		$this->destination = $data['to'];
+		$this->seat        = $data['seat'];
 
 		return $this;
 	}

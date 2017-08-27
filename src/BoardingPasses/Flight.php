@@ -16,11 +16,6 @@ class Flight extends BoardingPass {
 	/**
 	 * @var string
 	 */
-	protected $seat;
-
-	/**
-	 * @var string
-	 */
 	protected $gate;
 
 	/**
@@ -39,26 +34,6 @@ class Flight extends BoardingPass {
 	public function setBaggageInformation($baggageInformation)
 	{
 		$this->baggageInformation = $baggageInformation;
-
-		return $this;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getSeat()
-	{
-		return $this->seat;
-	}
-
-	/**
-	 * @param string $seat
-	 *
-	 * @return Flight
-	 */
-	public function setSeat($seat)
-	{
-		$this->seat = $seat;
 
 		return $this;
 	}
@@ -93,7 +68,6 @@ class Flight extends BoardingPass {
 		parent::fromArray($data);
 
 		$this->baggageInformation = $data['baggage'];
-		$this->seat               = $data['seat'];
 		$this->gate               = $data['gate'];
 		$this->departureNumber    = $data['flight'];
 
