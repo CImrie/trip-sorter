@@ -4,7 +4,7 @@
 namespace CImrie\FlightSorter;
 
 
-class BoardingPass {
+abstract class BoardingPass {
 
 	/**
 	 * @var string
@@ -54,5 +54,10 @@ class BoardingPass {
 		$this->destination = $destination;
 
 		return $this;
+	}
+
+	public function fromArray(array $data) {
+		$this->setSource($data['from']);
+		$this->setDestination($data['to']);
 	}
 }
