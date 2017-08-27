@@ -24,8 +24,9 @@ class Journey {
 	public function getDirections()
 	{
 		$directions = "";
+		$passes = $this->getBoardingPasses()->inChronologicalOrder();
 
-		foreach($this->getBoardingPasses()->inChronologicalOrder() as $position => $boardingPass) {
+		foreach($passes as $position => $boardingPass) {
 
 			if($position !== 0) {
 				$directions .= "\n";
@@ -33,6 +34,8 @@ class Journey {
 
 			$directions .= sprintf("%s. %s", ($position + 1), $boardingPass->getDirections());
 		}
+
+		$directions .= sprintf("\n%s. You have arrived at your final destination.", (count($passes) + 1));
 
 		return $directions;
 	}

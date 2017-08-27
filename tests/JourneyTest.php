@@ -90,6 +90,7 @@ class JourneyTest extends TestCase {
 1. From London, take flight F111 to Glasgow. Gate 5A, seat 1F. Baggage drop at ticket counter 1.
 2. Take train G1 from Glasgow to Edinburgh. Sit in seat A1.
 3. Take train EA34 from Edinburgh to Aberdeen. Sit in seat E5.
+4. You have arrived at your final destination.
 EOF;
 
 		$this->assertEquals($directions, $journey->getDirections());

@@ -115,7 +115,7 @@ abstract class BoardingPass {
 	{
 		$this->source      = $data['from'];
 		$this->destination = $data['to'];
-		$this->seat        = $data['seat'];
+		$this->seat        = $data['seat'] ?? 'No seat assignment';
 
 		return $this;
 	}
