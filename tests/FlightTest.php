@@ -30,6 +30,6 @@ class FlightTest extends TestCase {
 		$this->assertEquals($data['gate'], $flight->getGate());
 		$this->assertEquals($data['to'], $flight->getDestination());
 		$this->assertEquals($data['from'], $flight->getSource());
-		$this->assertEquals($data['flight'], $flight->getFlightNumber());
+		$this->assertEquals($data['flight'], $flight->getDepartureNumber());
 	}
 }

@@ -17,6 +17,11 @@ abstract class BoardingPass {
 	protected $destination;
 
 	/**
+	 * @var string
+	 */
+	protected $departureNumber;
+
+	/**
 	 * @return string
 	 */
 	public function getSource()
@@ -56,8 +61,35 @@ abstract class BoardingPass {
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getDepartureNumber()
+	{
+		return $this->departureNumber;
+	}
+
+	/**
+	 * @param string $departureNumber
+	 *
+	 * @return BoardingPass
+	 */
+	public function setDepartureNumber($departureNumber)
+	{
+		$this->departureNumber = $departureNumber;
+
+		return $this;
+	}
+
+	/**
+	 * @param array $data
+	 *
+	 * @return $this
+	 */
 	public function fromArray(array $data) {
 		$this->setSource($data['from']);
 		$this->setDestination($data['to']);
+
+		return $this;
 	}
 }
