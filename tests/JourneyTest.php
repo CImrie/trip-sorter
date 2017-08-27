@@ -56,13 +56,4 @@ class JourneyTest extends TestCase {
 		$this->assertCount(3, $sorted);
 		$this->assertEquals($end, $sorted[2]);
 	}
-
-	/**
-	 * @test
-	 */
-	public function can_sort_journey_waypoints_from_beginning_to_end()
-	{
-
-	}
-
 }
