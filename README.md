@@ -3,6 +3,7 @@
 ## Assumptions Made
 
 * Journey start points or destinations won't overlap such that you either start in or leave an area more than once.
+* Flights and trains always have seat assignments, so their direction output does not need to change other than displaying the appropriate seat number.
 
 ## Requirements
 
